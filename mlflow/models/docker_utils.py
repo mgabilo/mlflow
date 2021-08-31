@@ -16,7 +16,7 @@ _DOCKERFILE_TEMPLATE = """
 # FROM ubuntu:18.04
 FROM nvcr.io/nvidia/pytorch:21.08-py3
 
-RUN apt-get -y update && apt-get install -y --no-install-recommends \
+RUN DEBIAN_FRONTEND="noninteractive" apt-get -y update && apt-get install -y --no-install-recommends \
          wget \
          curl \
          nginx \
