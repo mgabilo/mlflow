@@ -36,6 +36,7 @@ RUN bash ./miniconda.sh -b -p /miniconda; rm ./miniconda.sh;
 ENV PATH="/miniconda/bin:$PATH"
 ENV JAVA_HOME=/usr/lib/jvm/java-8-openjdk-amd64
 ENV GUNICORN_CMD_ARGS="--timeout 60 -k gevent"
+ENV PYTHONPATH="/opt/conda/lib/python3.8/site-packages:/miniconda/lib/python3.8/site-packages"
 # Set up the program in the image
 WORKDIR /opt/mlflow
 
