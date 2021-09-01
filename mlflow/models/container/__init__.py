@@ -137,6 +137,7 @@ def _serve_pyfunc(model):
         check_call(["ln", "-sf", "/dev/stderr", "/var/log/nginx/error.log"])
 
     cpu_count = multiprocessing.cpu_count()
+    os.system("echo PYTHONPATH: $PYTHONPATH")
     os.system("pip -V")
     os.system("python -V")
     os.system('python -c"from mlflow.version import VERSION as V; print(V)"')
