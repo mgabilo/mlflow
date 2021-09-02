@@ -42,7 +42,7 @@ WORKDIR /opt/mlflow
 
 {install_mlflow}
 
-ENV PYTHONPATH="/miniconda/lib/python3.8/site-packages:/opt/conda/lib/python3.8/site-packages"
+ENV PYTHONPATH="/miniconda/envs/custom_env/lib/python3.8/site-packages:/miniconda/lib/python3.8/site-packages:/opt/conda/lib/python3.8/site-packages"
 RUN conda install -c conda-forge -y faiss-gpu
 
 {custom_setup_steps}
