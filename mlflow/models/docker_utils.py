@@ -37,7 +37,8 @@ ENV PATH="/miniconda/bin:$PATH"
 ENV JAVA_HOME=/usr/lib/jvm/java-8-openjdk-amd64
 ENV GUNICORN_CMD_ARGS="--timeout 60 -k gevent"
 ENV PYTHONPATH="/miniconda/lib/python3.8/site-packages:/opt/conda/lib/python3.8/site-packages"
-RUN conda install -c conda-forge -y faiss-gpu farm-haystack torch
+RUN conda install -c conda-forge -y faiss-gpu
+RUN pip install -y farm-haystack torch
 # Set up the program in the image
 WORKDIR /opt/mlflow
 
